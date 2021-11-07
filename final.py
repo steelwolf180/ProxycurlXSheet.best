@@ -1,12 +1,12 @@
+# Importing the python libraries
 import os
 import requests
 from dotenv import load_dotenv
 
+# Declaring the global variables and pulling configuration settings from .env file
 load_dotenv()
-
 proxycurl_api_key = os.getenv('PROXYCURL')
 sheet_best_api_url = os.getenv('SHEET_BEST_URL')
-
 api_endpoint = 'https://nubela.co/proxycurl/api/v2/linkedin'
 profile_url = 'https://www.linkedin.com/in/maxongzb/'
 

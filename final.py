@@ -32,3 +32,16 @@ def display_google_sheet_data():
     print(data)
 
     return data
+
+
+def save_linkedin_data(linkedin_data, position):
+    response = requests.patch(f'{sheet_best_api_url}/{position}',
+                              json={
+                                  'First Name': 'Max',
+                                  'Last Name': 'Ong',
+                                  'LinkedIn Page': 'https://www.linkedin.com/in/maxongzb/',
+                                  'Linkedin Data': linkedin_data}
+                              )
+
+    data = response.json()
+    print(data)

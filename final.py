@@ -34,23 +34,6 @@ def get_linkedin_profile_data(url):
         print({'Error: ': err.args})
 
 
-def display_google_sheet_data():
-    try:
-        response = requests.get(sheet_best_api_url)  # Saves the API response as JSON into "data" variable
-
-        if response.status_code == 200:
-            data = response.json()
-
-            print('=================Retrieve data from Google Sheet is Successful====================')
-            print(data)
-
-        else:
-            print('==================Retrieve data from Google Sheet is Successful===================')
-
-    except Exception as err:
-        print({'Error: ': err.args})
-
-
 def save_linkedin_data(linkedin_data, position):
     try:
         response = requests.patch(f'{sheet_best_api_url}/{position}',
@@ -66,6 +49,23 @@ def save_linkedin_data(linkedin_data, position):
 
         else:
             print('=================Saving data to Google Sheet is Unsuccessful==================')
+
+    except Exception as err:
+        print({'Error: ': err.args})
+
+
+def display_google_sheet_data():
+    try:
+        response = requests.get(sheet_best_api_url)  # Saves the API response as JSON into "data" variable
+
+        if response.status_code == 200:
+            data = response.json()
+
+            print('=================Retrieve data from Google Sheet is Successful====================')
+            print(data)
+
+        else:
+            print('==================Retrieve data from Google Sheet is Successful===================')
 
     except Exception as err:
         print({'Error: ': err.args})
